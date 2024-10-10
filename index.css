@@ -1,0 +1,192 @@
+:root {
+    --theme-background: #708a81;
+    --theme-light-background: #b0c0ba;
+}
+
+body {
+    margin: 0;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.2fr 0.2fr auto auto 0.2fr auto;
+    grid-template-areas:
+        "header"
+        "about"
+        "papers"
+        "books"
+        "collection"
+        "hobbies"
+        "blog";
+    gap:0.5em;
+    margin: 1em;
+    height:100vh;
+}
+
+#header{
+    grid-area: header;
+    background-color: var(--theme-light-background);
+}
+
+#menu{
+    display:none;
+}
+
+.navbar{
+    padding: 2em;
+    margin: 0 20em;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.navbar a:hover {
+    background-color: var(--theme-background);
+    border-radius: 3px;
+}
+
+#about{
+    grid-area: about;
+}
+
+.aboutGrid{
+    display:grid;
+    grid-template-columns: 0.1fr 1fr;
+    gap:0.2em;
+    align-items: center;
+}
+
+#about img{
+    width:100px;
+}
+
+#papers{
+    grid-area:papers;
+}
+
+.paperGrid{
+    display:grid;
+    grid-template-columns: 0.2fr 0.2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.paperGrid img{
+    width: 100px;
+    height: 100px;
+}
+
+#books{
+    grid-area:books;
+}
+
+.bookGrid{
+    display:grid;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    gap: 1em;
+}
+
+.bookCard {
+    border: 1px solid var(--theme-background);
+    border-radius: 10px;
+    margin: 0px 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.bookCard img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#collection{
+    grid-area:collection;
+}
+
+.collectionGrid{
+    display:grid;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+    gap:1em;
+}
+
+.collectionGrid img {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 0
+}
+
+#hobbies{
+    grid-area:hobbies;
+}
+
+.hobbiesBox{
+    display:grid;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr;
+    gap:1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbiesBox img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+.hobbies{
+    background-color: var(--theme-background);
+    color: white;
+    border-radius: 5px;
+    padding: 1em;
+    text-align: center;
+}
+
+#blog{
+    grid-area:blog;
+}
+
+.blogBox{
+    display: grid;
+    grid-template-columns:1fr;
+}
+
+@media only screen and (max-width:500px){
+    .gridContainer {
+        overflow-x: hidden;
+    }
+    #header{
+       background-color: white;
+    }
+    #menu{
+        display: block;
+        border:transparent;
+        background:none;
+        text-align: left;
+    }
+    .navbar{
+        display:none;
+        padding: 2em;
+        margin: 0;
+        background-color: var(--theme-light-background);
+    }
+    .navbar a{
+        display:block;
+    }
+
+    .aboutGrid,.bookGrid, .collectionGrid{
+        grid-template-columns: 1fr;
+    }
+    .paperGrid{
+        margin:0;
+        gap:1em;
+    }
+}
+
+
